@@ -57,9 +57,16 @@ function sessionUpdateListener(isAlive) {
 };
 
 function receiverListener(e) {
-  if (e !== 'available') {
-    alert('No Chromecast receivers available');
-  }
+    
+    if( e === 'available' ) {
+        
+        appendMessage("receiver found");
+    }
+    
+    else {
+        
+        appendMessage("receiver list empty");
+    }
 }
 
 function sendMessage(message) {
